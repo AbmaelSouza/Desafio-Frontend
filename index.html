@@ -13,7 +13,7 @@
 <div id="layoutheader">
     <nav id="header">
         <div id="header-title"><h1>Star Wars Universe</h1></div>
-        <label for="search">name</label><input id="search" placeholder="Pesquisar Personagens" type="text">
+        <label for="search" id="label1">name</label><input id="search" placeholder="Pesquisar Personagens" type="text">
     </nav>
     <div class="active" id="loading"><img alt="loading" src="includes/spinner-icon-12092.jpg"></div>
     <div id="content">
@@ -160,7 +160,7 @@
                     <p class="data" id="direc"></p>
                         </div>
                         <div id="pro">
-                            <p class="moviedesctitle">Producer</p>
+                            <p class="moviedesctitle">Produtor</p>
                             <p class="data" id="direcpro"></p></div>
                 </div>
             </div>
@@ -224,6 +224,33 @@
             </div>
             <button id="rightarrowc2" onclick="moverightcharsmovie()">></button>
         </div>
+        <div class="title">
+            <div class="traco"></div>
+            <h1 id="review-Title">Write a review</h1>
+            <div class="traco"></div>
+        </div>
+        <div id="review-layout">
+            <form action="index.html" method="POST">
+                <div id="formupper">
+                <div id="textform1">
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="fname" value="">
+                </div>
+                <div id="textform2">
+                <label for="email">Your E-mail</label>
+                <input type="text" id="email" name="email" value="">
+                </div>
+                </div>
+                <div id="textform3">
+                <label for="review">Review</label>
+                <input type="text" id="review" name="review" value=""><br>
+                </div>
+                <input id="submitbutton" type="submit" value="Publish">
+            </form>
+
+        </div>
+
+
     </div>
 </div>
 

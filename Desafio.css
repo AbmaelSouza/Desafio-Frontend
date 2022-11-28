@@ -269,6 +269,7 @@ button:active {
 #pro{
     display: flex;
     position: relative;
+    width: 120px;
     right: 84px;
     flex-direction: column;
 }

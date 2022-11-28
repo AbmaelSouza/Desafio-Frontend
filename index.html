@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Abmael</title>
+    <link href="Desafio.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="Desafiojs.js"></script>
+
+</head>
+<body>
+<div id="layoutheader">
+    <nav id="header">
+        <div id="header-title"><h1>Star Wars Universe</h1></div>
+        <label for="search">name</label><input id="search" placeholder="Pesquisar Personagens" type="text">
+    </nav>
+    <div class="active" id="loading"><img alt="loading" src="includes/spinner-icon-12092.jpg"></div>
+    <div id="content">
+        <div class="title">
+            <div class="traco"></div>
+            <h1 id="Title-movies">Movies</h1>
+            <div class="traco"></div>
+        </div>
+        <div id="setlayout">
+            <button id="leftarrowm" onclick="moverightmovies()"><</button>
+            <div class="active" id="movieslayout">
+                <div id="moviecard1">
+                    <img alt="poster Star Wars episódio 1" src="movie_posters/episode_1.jpg">
+                    <p class="nomefilme" id="movie1name"></p>
+                    <p class="datastr">Data de Lançamento</p>
+                    <p class="data" id="datalan1"></p>
+                    <p class="datastr">Diretor</p>
+                    <p class="data" id="direc1"></p>
+                </div>
+                <div id="moviecard2">
+                    <img alt="poster Star Wars episódio 2" src="movie_posters/episode_2.webp">
+                    <p class="nomefilme" id="movie2name"></p>
+                    <p class="datastr">Data de Lançamento</p>
+                    <p class="data" id="datalan2"></p>
+                    <p class="datastr">Diretor</p>
+                    <p class="data" id="direc2"></p>
+
+                </div>
+                <div id="moviecard3">
+                    <img alt="poster Star Wars episódio 3" src="movie_posters/episode_3.jpg">
+                    <p class="nomefilme" id="movie3name"></p>
+                    <p class="datastr">Data de Lançamento</p>
+                    <p class="data" id="datalan3"></p>
+                    <p class="datastr">Diretor</p>
+                    <p class="data" id="direc3"></p>
+
+
+                </div>
+                <div id="moviecard4">
+                    <img alt="poster Star Wars episódio 4" src="movie_posters/episode_4.webp">
+                    <p class="nomefilme" id="movie4name"></p>
+                    <p class="datastr">Data de Lançamento</p>
+                    <p class="data" id="datalan4"></p>
+                    <p class="datastr">Diretor</p>
+                    <p class="data" id="direc4"></p>
+
+                </div>
+                <div id="moviecard5">
+                    <img alt="poster Star Wars episódio 5" src="movie_posters/episode_5.jpg">
+                    <p class="nomefilme" id="movie5name"></p>
+                    <p class="datastr">Data de Lançamento</p>
+                    <p class="data" id="datalan5"></p>
+                    <p class="datastr">Diretor</p>
+                    <p class="data" id="direc5"></p>
+
+                </div>
+                <div id="moviecard6">
+                    <img alt="poster Star Wars episódio 6" src="movie_posters/episode_6.jpg">
+                    <p class="nomefilme" id="movie6name"></p>
+                    <p class="datastr">Data de Lançamento</p>
+                    <p class="data" id="datalan6"></p>
+                    <p class="datastr">Diretor</p>
+                    <p class="data" id="direc6"></p>
+                </div>
+            </div>
+            <button id="rightarrowm" onclick=moveleftmovies()>>
+            </button>
+        </div>
+        <div class="title">
+            <div class="traco"></div>
+            <h1 id="Title-chars">Characters</h1>
+            <div class="traco"></div>
+
+        </div>
+        <div id="personagens-box">
+            <button id="leftarrowc" onclick="moveleftchars()"><</button>
+            <div id="personagens-layout">
+
+                <div class="charcard" id="char1">
+                    <p class="nomepersonagem" id="char1name"></p>
+                    <p class="datastr">Data de Nascimento</p>
+                    <p class="data" id="datanas1"></p>
+                    <p class="datastr">Altura</p>
+                    <p class="data" id="char1alt"></p>
+                </div>
+                <div class="charcard" id="char2">
+                    <p class="nomepersonagem" id="char2name"></p>
+                    <p class="datastr">Data de Nascimento</p>
+                    <p class="data" id="datanas2"></p>
+                    <p class="datastr">Altura</p>
+                    <p class="data" id="char2alt"></p>
+                </div>
+                <div class="charcard" id="char3">
+                    <p class="nomepersonagem" id="char3name"></p>
+                    <p class="datastr">Data de Nascimento</p>
+                    <p class="data" id="datanas3"></p>
+                    <p class="datastr">Altura</p>
+                    <p class="data" id="char3alt"></p>
+                </div>
+                <div class="charcard" id="char4">
+                    <p class="nomepersonagem" id="char4name"></p>
+                    <p class="datastr">Data de Nascimento</p>
+                    <p class="data" id="datanas4"></p>
+                    <p class="datastr">Altura</p>
+                    <p class="data" id="char4alt"></p>
+                </div>
+                <div class="charcard" id="char5">
+                    <p class="nomepersonagem" id="char5name"></p>
+                    <p class="datastr">Data de Nascimento</p>
+                    <p class="data" id="datanas5"></p>
+                    <p class="datastr">Altura</p>
+                    <p class="data" id="char5alt"></p>
+                </div>
+                <div class="charcard" id="char6">
+                    <p class="nomepersonagem" id="char6name"></p>
+                    <p class="datastr">Data de Nascimento</p>
+                    <p class="data" id="datanas6"></p>
+                    <p class="datastr">Altura</p>
+                    <p class="data" id="char6alt"></p>
+                </div>
+
+            </div>
+            <button id="rightarrowc" onclick="moverightchars()">></button>
+        </div>
+    </div>
+    <div id="content2">
+        <div class="title">
+            <div class="traco"></div>
+            <h1 id="movie-title"></h1>
+            <div class="traco"></div>
+        </div>
+        <div id="setlayout2">
+            <div id="Movie-container">
+                <div id="movie-grid">
+                    <h1 id="description" class="moviedesctitle">Description</h1>
+                    <p class="datastr" id="crawl"></p>
+                    <div id="datalancamento">
+                        <p class="moviedesctitle">Data de Lançamento</p>
+                        <p class="data" id="datalan12"></p>
+                    </div>
+                    <div id="dirpro">
+                        <div id="dir">
+                    <p class="moviedesctitle">Diretor</p>
+                    <p class="data" id="direc"></p>
+                        </div>
+                        <div id="pro">
+                            <p class="moviedesctitle">Producer</p>
+                            <p class="data" id="direcpro"></p></div>
+                </div>
+            </div>
+            <img alt="poster Star Wars" id="poster" src="">
+
+        </div>
+    </div>
+        <div class="title">
+            <div class="traco"></div>
+            <h1 id="movie-chars">Characters of the movie</h1>
+            <div class="traco"></div>
+
+        </div>
+        <div id="personagens-box2">
+            <button id="leftarrowc2" onclick="moveleftcharsmovie()"><</button>
+            <div id="personagens-layout2">
+
+                <div class="charcard" id="char12">
+                    <p class="nomepersonagem" id="char1name2"></p>
+                    <p class="datastr">Data de Nascimento</p>
+                    <p class="data" id="datanas12"></p>
+                    <p class="datastr">Altura</p>
+                    <p class="data" id="char1alt2"></p>
+                </div>
+                <div class="charcard" id="char22">
+                    <p class="nomepersonagem" id="char2name2"></p>
+                    <p class="datastr">Data de Nascimento</p>
+                    <p class="data" id="datanas22"></p>
+                    <p class="datastr">Altura</p>
+                    <p class="data" id="char2alt2"></p>
+                </div>
+                <div class="charcard" id="char32">
+                    <p class="nomepersonagem" id="char3name2"></p>
+                    <p class="datastr">Data de Nascimento</p>
+                    <p class="data" id="datanas32"></p>
+                    <p class="datastr">Altura</p>
+                    <p class="data" id="char3alt2"></p>
+                </div>
+                <div class="charcard" id="char42">
+                    <p class="nomepersonagem" id="char4name2"></p>
+                    <p class="datastr">Data de Nascimento</p>
+                    <p class="data" id="datanas42"></p>
+                    <p class="datastr">Altura</p>
+                    <p class="data" id="char4alt2"></p>
+                </div>
+                <div class="charcard" id="char52">
+                    <p class="nomepersonagem" id="char5name2"></p>
+                    <p class="datastr">Data de Nascimento</p>
+                    <p class="data" id="datanas52"></p>
+                    <p class="datastr">Altura</p>
+                    <p class="data" id="char5alt2"></p>
+                </div>
+                <div class="charcard" id="char62">
+                    <p class="nomepersonagem" id="char6name2"></p>
+                    <p class="datastr">Data de Nascimento</p>
+                    <p class="data" id="datanas62"></p>
+                    <p class="datastr">Altura</p>
+                    <p class="data" id="char6alt2"></p>
+                </div>
+
+            </div>
+            <button id="rightarrowc2" onclick="moverightcharsmovie()">></button>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@600&display=swap');
+
+
+* {
+
+    font-family: 'Fira Code', monospace;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: fit-content;
+}
+
+#header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 80px;
+    font-size: 25px !important;
+    align-items: center;
+    background-color: black;
+    color: white;
+    justify-content: space-around;
+    z-index: 99;
+}
+
+/*search area*/
+label {
+    display: none;
+}
+
+#search {
+    width: 250px;
+    height: 29px;
+    padding-left: 4px;
+    position: relative;
+    border-radius: 5px;
+    border: 0;
+}
+
+::placeholder {
+    position: relative;
+    right: 4px;
+    text-align: right;
+    font-size: 12px;
+}
+
+#content , #content2 {
+    display: none;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    top: calc(80px + 31px);
+    justify-content: center;
+    gap: 1rem;
+}
+.title{
+    height: 32px;
+    max-width: 800px;
+    min-width: 800px;
+    margin: 0 auto;
+}
+#movie-title{
+
+}
+#content.active, #content2.active {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    top: calc(80px + 31px);
+    justify-content: center;
+    gap: 1rem;
+}
+
+.title {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#Title-movies , #Title-chars ,#movie-title , #movie-chars {
+    font-size: 24px;
+}
+#movie-chars{
+    width: 400px;
+}
+#movie-grid{
+    width: 100%;
+    height: 100%;
+
+}
+.traco {
+    justify-content: center;
+    position: relative;
+    flex-basis: 30%;
+    height: 1px;
+    background-color: black;
+    transform: translate(0, calc(1600%));
+}
+
+
+#loading.active > img {
+    position: relative;
+    display: block;
+    top: 150px;
+    height: 50px;
+    width: 50px;
+    transform: translate(-43%, -43%);
+    animation-name: round;
+    margin: 0 auto;
+    animation-fill-mode: forwards;
+    animation-duration: 1000s;
+}
+
+@keyframes round {
+    0% {
+        transform: rotate(0turn);
+
+    }
+    100% {
+        transform: rotate(999turn);
+    }
+
+}
+#setlayout , #personagens-box{
+    display: flex;//flex
+    position: relative;
+    width: 750px;
+    margin: 0 auto;
+    height:fit-content;
+}
+#setlayout2, #personagens-box2{
+    display: flex;
+    position: relative;
+    width: 750px;
+    margin: 0 auto;
+    height:fit-content;
+
+}
+#setlayout2{
+    height: 460px;
+    padding-top: 1.5rem;
+}
+
+#leftarrowm, #rightarrowm{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 140px;
+    margin-right: 12px;
+    margin-left: 12px;
+    background-color: black;
+    font-size: 24px;
+    color: white;
+    border-radius: 100%;
+    line-break: unset;
+    transition: 0.1s;
+}
+#leftarrowc, #rightarrowc ,#leftarrowc2, #rightarrowc2{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 40px;
+    margin-right: 12px;
+    margin-left: 12px;
+    background-color: black;
+    font-size: 24px;
+    color: white;
+    border-radius: 100%;
+    line-break: unset;
+    transition: 0.1s;
+}
+
+button:active {
+    scale: 0.9;
+}
+
+#movieslayout, #personagens-layout , #personagens-layout2 {
+    width: 602px;
+    margin: 0 auto;
+    position: relative;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+#Movie-container{
+    display: grid;
+    width: 602px;
+    grid-template-columns: 4fr 2fr;
+    grid-template-rows:  1fr;
+    margin: 0 auto;
+}
+#crawl {
+    width: 80%;
+    height: 220px;
+    text-justify: distribute;
+    padding-bottom: 12px;
+    overflow: hidden;
+}
+.moviedesctitle{
+    width: 100%;
+    height: 32px;
+    font-size: 14px;
+}
+#poster{
+    border-radius: 12px;
+    height: 320px;
+    width: 100%;
+}
+#datalancamento{
+    display: flex;
+}
+#datalan12{
+    display: flex;
+    position: relative;
+    width: 100px;
+    right: 70px;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+}
+#dirpro{
+    display: flex;
+    justify-content: space-between;
+}
+#pro{
+    display: flex;
+    position: relative;
+    right: 84px;
+    flex-direction: column;
+}
+
+#moviecard1, #moviecard2, #moviecard3, #moviecard4, #moviecard5, #moviecard6{
+    display: grid;
+    position: relative;
+    width: 180px;
+    margin: 10px;
+    border-radius: 12px;
+    height: fit-content;
+    right: 0;
+    grid-template-rows: 268px 30px auto auto auto auto;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    grid-auto-columns: auto;
+    grid-auto-rows: auto;
+    transition: 0.2s;
+    border: 1px solid #cfcfcf;
+    z-index: 1;
+}
+[id*="moviecard"]:hover{
+    transition: 0.1s;
+    scale: 1.05;
+    cursor: pointer ;
+}
+#header-title:hover{
+    cursor:pointer;
+}
+#char1 , #char2 , #char3 , #char4 , #char5 , #char6,
+#char12 , #char22, #char32 , #char42 , #char52 , #char62{
+    display: grid;
+    position: relative;
+    width: 180px;
+    margin: 10px;
+    border-radius: 12px;
+    height: fit-content;
+    right: 0;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    grid-auto-columns: auto;
+    grid-auto-rows: auto;
+    transition: 0.1s;
+    border: 1px solid #cfcfcf;
+
+}
+
+
+.charcard {
+    border: 1px solid #cfcfcf;
+    width: 180px;
+    height: 140px;
+}
+
+
+
+.nomepersonagem{
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+}
+
+.nomefilme, .nomepersonagem {
+    width: 180px;
+    position: relative;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 30px;
+    font-size: 12px;
+    background-color: #ffc700;
+    color: white;
+    font-weight: 500;
+
+}
+
+p {
+    text-indent: 0.7rem;
+    color: #505050;
+    font-weight: 300;
+
+}
+
+[id*="datalan"], [id*="direc"], [id*="datanas"]{
+    font-size: 10px;
+}
+.data{
+    font-size: 10px;
+}
+.datastr {
+    font-size: 12px;
+    height: 18px;
+}
+
+img {
+    width: 180px;
+    height: 268px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    transition: 0.2s;
+}
+
+p {
+    height: 1rem;
+    width: 100%;
+}
+#characterslayout{
+    display: flex;
+    width: 602px;
+    margin: 0 auto;
+}

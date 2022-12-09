@@ -1,5 +1,5 @@
 var filmes;
-var personagens;
+var personagens = [];
 var characters;
 var dates;
 var director;
@@ -115,9 +115,15 @@ $( document ).ready( function () { //checar se o documento está pronto//
     }
 
     async function getchardata() {
-        personagens = await getfromapi( "https://swapi.dev/api/people/?page=1&format=json" );
-        personagenspg2= await getfromapi( "https://swapi.dev/api/people/?page=2&format=json" );
-        personagenspg3= await getfromapi( "https://swapi.dev/api/people/?page=3&format=json" );
+
+            let url = 'https://swapi.dev/api/people/?page=1&format=json';
+
+            do {
+                const res = await fetch(url);
+                const data = await res.json();
+                url = data.next;
+                personagens = personagens.concat(data.results);
+            } while(url)
 
         $char1name.append( personagens[0].name.toString() );
         $datanas1.append( personagens[0].birth_year.toString() );
@@ -145,19 +151,14 @@ $( document ).ready( function () { //checar se o documento está pronto//
 
 
     }
-
            async function getALLdata() {
-
             await getdates();
             await getfilms();
             await getdirectors();
             await getchardata();
             $setlayout.addClass( "active" );
             $loading.toggle();
-
-
         }
-
 
         getALLdata();
 
@@ -175,21 +176,21 @@ $( document ).ready( function () { //checar se o documento está pronto//
             $( "#char1name2" ).append( personagens[charlist1[0]].name.toString() );
             $( "#char2name2" ).append( personagens[charlist1[1]].name.toString() );
             $( "#char3name2" ).append( personagens[charlist1[2]].name.toString() );
-            $( "#char4name2" ).append( personagenspg2[charlist1[3]-9].name.toString() );
-            $( "#char5name2" ).append( personagenspg2[charlist1[4]-9].name.toString() );
-            $( "#char6name2" ).append( personagenspg3[charlist1[5]-18].name.toString() );
+            $( "#char4name2" ).append( personagens[charlist1[3]].name.toString() );
+            $( "#char5name2" ).append( personagens[charlist1[4]].name.toString() );
+            $( "#char6name2" ).append( personagens[charlist1[5]].name.toString() );
             $( "#datanas12" ).append( personagens[charlist1[0]].birth_year.toString() );
             $( "#datanas22" ).append( personagens[charlist1[1]].birth_year.toString() );
             $( "#datanas32" ).append( personagens[charlist1[2]].birth_year.toString() );
-            $( "#datanas42" ).append( personagenspg2[charlist1[3]-9].birth_year.toString() );
-            $( "#datanas52" ).append( personagenspg2[charlist1[4]-9].birth_year.toString() );
-            $( "#datanas62" ).append( personagenspg3[charlist1[5]-18].birth_year.toString() );
+            $( "#datanas42" ).append( personagens[charlist1[3]].birth_year.toString() );
+            $( "#datanas52" ).append( personagens[charlist1[4]].birth_year.toString() );
+            $( "#datanas62" ).append( personagens[charlist1[5]].birth_year.toString() );
             $( "#char1alt2" ).append( personagens[charlist1[0]].height.toString() );
             $( "#char2alt2" ).append( personagens[charlist1[1]].height.toString() );
             $( "#char3alt2" ).append( personagens[charlist1[2]].height.toString() );
-            $( "#char4alt2" ).append( personagenspg2[charlist1[3]-9].height.toString() );
-            $( "#char5alt2" ).append( personagenspg2[charlist1[4]-9].height.toString() );
-            $( "#char6alt2" ).append( personagenspg3[charlist1[5]-18].height.toString() );
+            $( "#char4alt2" ).append( personagens[charlist1[3]].height.toString() );
+            $( "#char5alt2" ).append( personagens[charlist1[4]].height.toString() );
+            $( "#char6alt2" ).append( personagens[charlist1[5]].height.toString() );
 
             $("#content2").addClass("active");
             $loading.toggle();
@@ -211,19 +212,19 @@ $( document ).ready( function () { //checar se o documento está pronto//
         $( "#char3name2" ).append( personagens[charlist1[2]].name.toString() );
         $( "#char4name2" ).append( personagens[charlist1[3]].name.toString() );
         $( "#char5name2" ).append( personagens[charlist1[4]].name.toString() );
-        $( "#char6name2" ).append( personagenspg2[charlist1[5]-9].name.toString() );
+        $( "#char6name2" ).append( personagens[charlist1[5]].name.toString() );
         $( "#datanas12" ).append( personagens[charlist1[0]].birth_year.toString() );
         $( "#datanas22" ).append( personagens[charlist1[1]].birth_year.toString() );
         $( "#datanas32" ).append( personagens[charlist1[2]].birth_year.toString() );
         $( "#datanas42" ).append( personagens[charlist1[3]].birth_year.toString() );
         $( "#datanas52" ).append( personagens[charlist1[4]].birth_year.toString() );
-        $( "#datanas62" ).append( personagenspg2[charlist1[5]-9].birth_year.toString() );
+        $( "#datanas62" ).append( personagens[charlist1[5]].birth_year.toString() );
         $( "#char1alt2" ).append( personagens[charlist1[0]].height.toString() );
         $( "#char2alt2" ).append( personagens[charlist1[1]].height.toString() );
         $( "#char3alt2" ).append( personagens[charlist1[2]].height.toString() );
         $( "#char4alt2" ).append( personagens[charlist1[3]].height.toString() );
         $( "#char5alt2" ).append( personagens[charlist1[4]].height.toString() );
-        $( "#char6alt2" ).append( personagenspg2[charlist1[5]-9].height.toString() );
+        $( "#char6alt2" ).append( personagens[charlist1[5]].height.toString() );
 
         $("#content2").addClass("active");
         $loading.toggle();

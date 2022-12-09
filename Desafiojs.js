@@ -118,13 +118,6 @@ $( document ).ready( function () { //checar se o documento está pronto//
         personagens = await getfromapi( "https://swapi.dev/api/people/?page=1&format=json" );
         personagenspg2= await getfromapi( "https://swapi.dev/api/people/?page=2&format=json" );
         personagenspg3= await getfromapi( "https://swapi.dev/api/people/?page=3&format=json" );
-        personagenspg4= await getfromapi( "https://swapi.dev/api/people/?page=4&format=json" );
-        personagenspg5= await getfromapi( "https://swapi.dev/api/people/?page=5&format=json" );
-        personagenspg6= await getfromapi( "https://swapi.dev/api/people/?page=6&format=json" );
-        personagenspg7= await getfromapi( "https://swapi.dev/api/people/?page=7&format=json" );
-        personagenspg8= await getfromapi( "https://swapi.dev/api/people/?page=8&format=json" );
-        personagenspg9= await getfromapi( "https://swapi.dev/api/people/?page=9&format=json" );
-
 
         $char1name.append( personagens[0].name.toString() );
         $datanas1.append( personagens[0].birth_year.toString() );
